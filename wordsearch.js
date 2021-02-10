@@ -2,9 +2,11 @@ const wordSearch = (letters, word) => {
     if (letters.length === 0) {
         return false;
     }
+    
     const colLength = letters.length;
     const rowLength = letters[0].length;
     let found = false;
+
     for (let col = 0; col < rowLength; col++){
         let tempArray = [];
 
@@ -13,12 +15,9 @@ const wordSearch = (letters, word) => {
             
         }
         const verticalJoin = tempArray.join('')
-        //console.log(tempArray.join(''));
-        //console.log(verticalJoin);
         if (verticalJoin.includes(word)) {
             found = true;
         }
-        //console.log(tempArray);
     }
 
     const horizontalJoin = letters.map(ls => ls.join(''))
@@ -29,9 +28,6 @@ const wordSearch = (letters, word) => {
     }
     return found;
 }
-
-const arr = [];
-const word = 'FRANK';
 
 console.log(wordSearch(arr, word));
 
